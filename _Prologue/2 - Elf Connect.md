@@ -98,7 +98,7 @@ Complete the game with the provided answers to complete the Silver challenge.
 > 
 > ![Pasted image 20241127185647](attachments/Pasted%20image%2020241127185647.png)
 
-In the Chrome 'Console' tab, enter the following command:
+In Chrome's 'Console' tab, enter the following command:
 
 ```javascript
 submitAction(2);

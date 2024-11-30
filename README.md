@@ -1,8 +1,6 @@
 
 # SANS Holiday Hack Challenge 2024 WriteUp
 
-Navigating this writeup:
-
 > Comments and images are indented like this
 
 Required actions are not indented, like this
@@ -21,9 +19,9 @@ Required actions are not indented, like this
 
 [5 - Frosty Keypad](Act%201/5%20-%20Frosty%20Keypad.md)
 
-[5.1 - Slices.zip](Act%201/5.1%20-%20Slices.zip.md)
+[5.1 - shreds.zip](Act%201/5.1%20-%20shreds.zip.md)
 
-[5.2 - Slices.zip (the better way)](Act%201/5.2%20-%20Slices.zip%20(the%20better%20way).md)
+[5.2 - shreds.zip (the better way)](Act%201/5.2%20-%20shreds.zip%20(the%20better%20way).md)
 
 [6 - Hardware Hacking 101 - Part 1](Act%201/6%20-%20Hardware%20Hacking%20101%20-%20Part%201.md)
 

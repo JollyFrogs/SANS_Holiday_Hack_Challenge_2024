@@ -15,7 +15,7 @@ Click the 'Sources' tab and then click on 'Overrides' tab in the left panel (ref
 Click 'Select folder for overrides' and choose any folder e.g. C:\Users\Username\Desktop\HHC2024\
 
 > [!IMPORTANT]
-> Click 'Allow' to allow DevTools to use the folder (refer red arrow below)
+> Click 'Allow' to allow DevTools to use the folder
 
 > ![Pasted image 20241127203354](attachments/Pasted%20image%2020241127203354.png)
 
@@ -40,7 +40,7 @@ Right-click 'game2.js' and select 'Override content'
 > [!WARNING]
 > Do not edit 'game2.js' in the browser - instead edit 'game2.js' in the override directory
 
-Open a 'Windows Terminal' (PowerShell prompt) on your Windows computer, and paste the following contents. This will make available a function 'windiff' that can apply the necessary changes to the javascript source-files:
+Open a 'Windows Terminal' (PowerShell prompt) on your Windows computer, and paste the following contents.
 
 ```powershell
 function windiff {
@@ -150,7 +150,7 @@ function windiff {
 # windiff -apply -backup:$false original.js changes.diff
 ```
 
-In the same Windows Terminal, navigate to the folder that contains the file 'game2.js' and paste the following contents. This will modify 'game2.js':
+In the same Terminal / PowerShell, paste the following contents to modify 'game2.js':
 
 ```powershell
 # Change to your Override directory
@@ -185,11 +185,11 @@ cd $HOME\Desktop\HHC2024\hhc24-elfminder.holidayhackchallenge.com\
 windiff -apply game2.js .\game2.js.diff
 ```
 
-Afted applying the diff, the browser should ask whether to apply the changes (Click 'Apply' when it does), but if it does not, simply refresh the game website to apply the changes.
-
-With the changes made, you can now place unlimited Springs, and you can place Tunnels within 1 distance of objects - which will be crucial for the Gold challenge.
-
-Below are screenshots of solutions for each level:
+> Afted applying the diff, the browser should ask whether to apply the changes (Click 'Apply' when it does), but if it does not, simply refresh the game website to apply the changes.
+> 
+> With the changes made, you can now place unlimited Springs, and you can place Tunnels within 1 distance of objects - which will be crucial for the Gold challenge.
+> 
+> Below are screenshots of solutions for each level:
 
 > [!NOTE]
 > If you have issues placing a tunnel or spring at a specific location, open the developer console, and try placing it with the developer console open. If that does not work, close the developer console and try placing it with the console closed. If that doesn't work, resize the game window until it works.
@@ -242,18 +242,16 @@ Below are screenshots of solutions for each level:
 > 
 > ![Pasted image 20241127231518](attachments/Pasted%20image%2020241127231518.png)
 > 
-
-Completing the above levels will award the Silver medal
-
+> Completing the above levels will award the Silver medal
 > 
 > ### Gold Medal
 > 
 > A Real Pickle
 > 
 > ![Pasted image 20241127231702](attachments/Pasted%20image%2020241127231702.png)
- 
-Completing the level 'A Real Pickle' awards the Gold medal
- 
+> 
+> Completing the level 'A Real Pickle' awards the Gold medal
+> 
 > Medal progress:
 > 
 > ![Pasted image 20241127231927](attachments/Pasted%20image%2020241127231927.png)

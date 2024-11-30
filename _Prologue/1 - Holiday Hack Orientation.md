@@ -19,7 +19,10 @@ answer
 > 
 > This completes the Silver and Gold challenge.
 > 
-> You can check your medal progress by visiting this link: https://account.counterhack.com/profile
+> You can check your medal progress by visiting this link:
+> https://account.counterhack.com/profile
+> 
+> Medal progress:
 > 
 > ![Pasted image 20241127194622](attachments/Pasted%20image%2020241127194622.png)
 > 
