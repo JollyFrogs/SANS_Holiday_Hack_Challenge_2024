@@ -161,7 +161,7 @@ Right-click the request and select 'Copy' -> 'Copy as PowerShell':
 > Using relevant parts of the script above, we can create a script that brute-forces the correct code:
 
 > [!TIP]
-> The brute-force script works with even with an invalid cookie and id ¯\\\_(ツ)\_/¯
+> The brute-force script works even with an invalid cookie and id ¯\\\_(ツ)\_/¯
 
 ```
 $digits = 2,6,7,8
