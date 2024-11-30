@@ -35,7 +35,7 @@ python heuristic_edge_detection.py
 start .\assembled_image.png
 ```
 
-> Looking at the final output image, we can see that the Python script did not do a very goodjob.
+> Looking at the final output image, we can see that the Python script did not do a very good job.
 > 
 > The image is mostly assembled, but has artefacts and is mirrored horizontally.
 
