@@ -20,9 +20,12 @@ Click 'Select folder for overrides' and choose any folder e.g. C:\Users\Username
 > ![Pasted image 20241127203354](attachments/Pasted%20image%2020241127203354.png)
 
 Still in the 'Sources' tab, in the left-hand panel click the 'Page' tab:
-  Expand 'top'
-  Expand 'index.html'
-  Expand 'hhc24-elfminder.holidayhackchallenge.com'
+
+Expand 'top'
+
+Expand 'index.html'
+
+Expand 'hhc24-elfminder.holidayhackchallenge.com'
 
 Right-click 'game2.js' and select 'Override content'
 
@@ -37,7 +40,7 @@ Right-click 'game2.js' and select 'Override content'
 > [!WARNING]
 > Do not edit 'game2.js' in the browser - instead edit 'game2.js' in the override directory
 
-Open a 'Windows Terminal' (PowerShell prompt) on your Windows computer, and copy-paste the following contents which will add a function 'windiff' that will apply the necessary changes to the javascript source-files:
+Open a 'Windows Terminal' (PowerShell prompt) on your Windows computer, and paste the following contents. This will make available a function 'windiff' that can apply the necessary changes to the javascript source-files:
 
 ```powershell
 function windiff {
@@ -147,7 +150,7 @@ function windiff {
 # windiff -apply -backup:$false original.js changes.diff
 ```
 
-In the same Windows Terminal, paste the following contents to modify 'game2.js':
+In the same Windows Terminal, navigate to the folder that contains the file 'game2.js' and paste the following contents. This will modify 'game2.js':
 
 ```powershell
 # Change to your Override directory

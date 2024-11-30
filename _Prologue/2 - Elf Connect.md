@@ -5,6 +5,7 @@
 > ### Silver Medal
 
 Click on the 'Elf Connect' terminal
+
 Right-click one of the green squares in the game and click 'Inspect' 
 
 > This opens the Chrome Developer Console. 
@@ -14,10 +15,14 @@ Right-click one of the green squares in the game and click 'Inspect'
 > ![Pasted image 20241127195048](attachments/Pasted%20image%2020241127195048.png)
 
 Click the 'Sources' tab
+
 Then in the left-hand panel, expand 'top'
-  Expand 'hhc24-elfconnect.holidayhackchallenge.com/'
-  Expand 'hhc24-elfconnect.holidayhackchallenge.com'
-  Select '?&challenge=termElfConnect&username=...'
+
+Expand 'hhc24-elfconnect.holidayhackchallenge.com/'
+
+Expand 'hhc24-elfconnect.holidayhackchallenge.com'
+
+Select '?&challenge=termElfConnect&username=...'
 
 > ![Pasted image 20241127184641](attachments/Pasted%20image%2020241127184641.png)
 > 
