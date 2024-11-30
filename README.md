@@ -1,6 +1,8 @@
 
 # SANS Holiday Hack Challenge 2024 WriteUp
 
+Navigating this writeup:
+
 > Comments and images are indented like this
 
 Required actions are not indented, like this
