@@ -9,7 +9,7 @@
 > [!NOTE]
 >  A lot of players who used the Python heuristics script ended up with a mirrored image output. The original image is actually not mirrored, but due to the way that the Python script reassembles the slices, there is a chance that it reconstructs a mirror of the original image. The script matches the second slice on the wrong side of the first slice, and the script will continue matching the rest of the slices, resulting in a reversed image.
 
-> The Python image output:
+> The image that 'heuristic_edge_detection.py' outputs:
 > ![Pasted image 20241128010844](attachments/Pasted%20image%2020241128010844.png)
 > 
 > Surely, we can do better than that with PowerShell!
