@@ -1,5 +1,5 @@
-> Walk East until you see the 'Elf Minder 9000' terminal:
-> 
+Walk East until you see the 'Elf Minder 9000' terminal:
+ 
 > ![Pasted image 20241127190514](attachments/Pasted%20image%2020241127190514.png)
 > 
 > ### Silver Medal
