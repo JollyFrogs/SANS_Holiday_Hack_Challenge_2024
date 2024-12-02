@@ -1,5 +1,5 @@
-> Walk East, until you see the 'Elf Connect' terminal:
-> 
+Walk East, until you see the 'Elf Connect' terminal:
+
 > ![Pasted image 20241127184420](attachments/Pasted%20image%2020241127184420.png)
 > 
 > ### Silver Medal
