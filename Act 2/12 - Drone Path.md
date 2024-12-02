@@ -11,7 +11,7 @@ Walk West toward the gate
 Click the 'Drone Path' terminal:
 
 > ![](attachments/Pasted%20image%2020241201224140.png)
-
+>
 > ### Silver Medal
 
 Click the hamburger menu in the top right -> 'Menu' -> 'FileShare':
