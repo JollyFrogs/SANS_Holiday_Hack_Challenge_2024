@@ -19,12 +19,12 @@ Create a new account on the kc7cyber.com website
 let's do this
 ```
 
- > ###### Section 1 - Question 2
- > Once you've examined all the tables, type when in doubt take 10 to proceed.
- >
+> ###### Section 1 - Question 2
+> Once you've examined all the tables, type when in doubt take 10 to proceed.
+>
 > ~~~
-database('NorthPoleWorkshop').Employees
-| take 10
+> database('NorthPoleWorkshop').Employees
+> | take 10
 > ~~~
 
 ```
