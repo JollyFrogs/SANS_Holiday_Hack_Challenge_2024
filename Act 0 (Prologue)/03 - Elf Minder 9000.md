@@ -8,7 +8,7 @@ Click the 'Elf Minder 9000' terminal
 
 Right-click anywhere in the Elf Minder 9000 (e.g. the 'Sandy Start' button) and select 'Inspect'
 
-Click the 'Sources' tab and then click on 'Overrides' tab in the left panel (refer red arrow below)
+Click the 'Sources' tab and then click on 'Overrides' tab in the left panel
 
 > ![Pasted image 20241127202905](attachments/Pasted%20image%2020241127202905.png)
 
