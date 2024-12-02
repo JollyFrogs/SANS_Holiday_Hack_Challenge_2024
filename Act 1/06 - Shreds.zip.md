@@ -16,7 +16,7 @@
 > 
 > ![](attachments/Pasted%20image%2020241129004026.png) 
 > 
-> The following PowerShell script inspects the metadata contained in the image files:
+> The following PowerShell script prints the metadata contained in the image files:
 > 
 > ~~~powershell
 > function Get-ImageMetadata {
