@@ -11,11 +11,11 @@ Required actions like clicking or entering text or running PowerShell scripts ar
 
 ### Prologue
 
-[01 - Holiday Hack Orientation](_Prologue/01%20-%20Holiday%20Hack%20Orientation.md)
+[01 - Holiday Hack Orientation](Act%200%20(Prologue)/01%20-%20Holiday%20Hack%20Orientation.md)
 
-[02 - Elf Connect](_Prologue/02%20-%20Elf%20Connect.md)
+[02 - Elf Connect](Act%200%20(Prologue)/02%20-%20Elf%20Connect.md)
 
-[03 - Elf Minder 9000](_Prologue/03%20-%20Elf%20Minder%209000.md)
+[03 - Elf Minder 9000](Act%200%20(Prologue)/03%20-%20Elf%20Minder%209000.md)
 
 ### Act I
 
