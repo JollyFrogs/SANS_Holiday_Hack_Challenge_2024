@@ -216,8 +216,8 @@
 > ~~~
 > 
 > The strings are all numbers in the range 1 to 1000. There are 1000 slices, so the numbers very likely indicate the slice order of the original image.
-> 
-> We write a script in PowerShell that decodes the base64 comment data, and combines the 1000 slices in the correct order based on the decoded comment. Additionally, the script prints out the combined text objects:
+
+Run the following PowerShell - it decodes the base64 comment data, combines the 1000 slices in the correct order based on the decoded comment, and prints out the combined text objects:
 
 ```powershell
 # create a working directory
