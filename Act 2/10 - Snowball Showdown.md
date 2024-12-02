@@ -40,7 +40,7 @@ Click 'CREATE PRIVATE ROOM' inside the game to start a new game
 >
 
 > [!NOTE] 
-> Refer to [3 - Elf Minder 9000](../_Prologue/3%20-%20Elf%20Minder%209000.md) on how to override javascript content. We will use the same method below, without screenshots:
+> Refer to [03 - Elf Minder 9000](../_Prologue/03%20-%20Elf%20Minder%209000.md) on how to override javascript content. We will use the same method below, without screenshots:
 
 Right-click 'phaser-snowball-game.js'
 

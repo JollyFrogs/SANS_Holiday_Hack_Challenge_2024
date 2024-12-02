@@ -19,9 +19,9 @@ Create a new account on the kc7cyber.com website
 let's do this
 ```
 
-> ###### Section 1 - Question 2
-> Once you've examined all the tables, type when in doubt take 10 to proceed.
->
+ > ###### Section 1 - Question 2
+ > Once you've examined all the tables, type when in doubt take 10 to proceed.
+ >
 > ~~~sql
 > database('NorthPoleWorkshop').Employees
 > | take 10
@@ -35,8 +35,8 @@ when in doubt take 10
 > How many elves did you find?
 >
 > ~~~sql
-database('NorthPoleWorkshop').Employees
-| count
+> database('NorthPoleWorkshop').Employees
+> | count
 > ~~~
 
 ```
@@ -47,9 +47,9 @@ database('NorthPoleWorkshop').Employees
 > Can you find out the name of the Chief Toy Maker?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').Employees
-| where role == "Chief Toy Maker"
-| distinct name
+> database('NorthPoleWorkshop').Employees
+> | where role == "Chief Toy Maker"
+> | distinct name
 > ~~~
 
 ```
@@ -67,12 +67,12 @@ operator
 > How many emails did Angel Candysalt receive?
 >
 > ~~~sql
-let email_address = database('NorthPoleWorkshop').Employees
-| where name contains "candysalt"
-| distinct email_addr;
-database('NorthPoleWorkshop').Email
-| where recipient in (email_address)
-| count
+> let email_address = database('NorthPoleWorkshop').Employees
+> | where name contains "candysalt"
+> | distinct email_addr;
+> database('NorthPoleWorkshop').Email
+> | where recipient in (email_address)
+> | count
 > ~~~
 
 ```
@@ -83,10 +83,10 @@ database('NorthPoleWorkshop').Email
 > How many distinct recipients were seen in the email logs from twinkle_frostington@santaworkshopgeeseislands.org?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').Email
-| where sender == "twinkle_frostington@santaworkshopgeeseislands.org"
-| distinct recipient
-| count
+> database('NorthPoleWorkshop').Email
+> | where sender == "twinkle_frostington@santaworkshopgeeseislands.org"
+> | distinct recipient
+> | count
 > ~~~
 
 ```
@@ -97,13 +97,13 @@ database('NorthPoleWorkshop').Email
 > How many distinct websites did Twinkle Frostington visit?
 > 
 > ~~~sql
-let twinkles_ip = database('NorthPoleWorkshop').Employees
-| where name contains "Twinkle Frostington"
-| distinct ip_addr;
-database('NorthPoleWorkshop').OutboundNetworkEvents
-| where src_ip in (twinkles_ip)
-| distinct url
-| count
+> let twinkles_ip = database('NorthPoleWorkshop').Employees
+> | where name contains "Twinkle Frostington"
+> | distinct ip_addr;
+> database('NorthPoleWorkshop').OutboundNetworkEvents
+> | where src_ip in (twinkles_ip)
+> | distinct url
+> | count
 > ~~~
 
 ```
@@ -114,10 +114,10 @@ database('NorthPoleWorkshop').OutboundNetworkEvents
 > How many distinct domains in the PassiveDns records contain the word green?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').PassiveDns
-| where domain contains "green"
-| distinct domain
-| count
+> database('NorthPoleWorkshop').PassiveDns
+> | where domain contains "green"
+> | distinct domain
+> | count
 > ~~~
 
 ```
@@ -128,14 +128,14 @@ database('NorthPoleWorkshop').PassiveDns
 > How many distinct URLs did elves with the first name Twinkle visit?
 >
 > ~~~sql
-let twinkle_ips =
-database('NorthPoleWorkshop').Employees
-| where name has "Twinkle"
-| distinct ip_addr;
-database('NorthPoleWorkshop').OutboundNetworkEvents  
-| where src_ip in (twinkle_ips)  
-| distinct url
-| count
+> let twinkle_ips =
+> database('NorthPoleWorkshop').Employees
+> | where name has "Twinkle"
+> | distinct ip_addr;
+> database('NorthPoleWorkshop').OutboundNetworkEvents  
+> | where src_ip in (twinkle_ips)  
+> | distinct url
+> | count
 > ~~~
 
 ```
@@ -159,10 +159,10 @@ surrender
 > Who was the sender of the phishing email that set this plan into motion?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').Email
-| where subject contains "surrender"
-| where verdict != "CLEAN"
-| distinct sender
+> database('NorthPoleWorkshop').Email
+> | where subject contains "surrender"
+> | where verdict != "CLEAN"
+> | distinct sender
 > ~~~
 
 ```
@@ -173,14 +173,14 @@ surrender@northpolemail.com
 > How many elves from Team Wombley received the phishing email?
 > 
 > ~~~sql
-let womblies =
-database('NorthPoleWorkshop').Employees
-| where hostname contains "-W-"
-| distinct username;
-database('NorthPoleWorkshop').Email
-| where sender contains "surrender"
-| distinct recipient
-| count
+> let womblies =
+> database('NorthPoleWorkshop').Employees
+> | where hostname contains "-W-"
+> | distinct username;
+> database('NorthPoleWorkshop').Email
+> | where sender contains "surrender"
+> | distinct recipient
+> | count
 > ~~~
 
 ```
@@ -191,15 +191,15 @@ database('NorthPoleWorkshop').Email
 > What was the filename of the document that Team Alabaster distributed in their phishing email?
 > 
 > ~~~sql
-let womblies =
-database('NorthPoleWorkshop').Employees
-| where hostname contains "-W-"
-| distinct username;
-database('NorthPoleWorkshop').Email
-| where sender contains "surrender"
-| extend filename = replace_regex(link, '^.*[/]', "")
-| project filename
-| distinct filename
+> let womblies =
+> database('NorthPoleWorkshop').Employees
+> | where hostname contains "-W-"
+> | distinct username;
+> database('NorthPoleWorkshop').Email
+> | where sender contains "surrender"
+> | extend filename = replace_regex(link, '^.*[/]', "")
+> | project filename
+> | distinct filename
 > ~~~
 
 ```
@@ -210,13 +210,13 @@ Team_Wombley_Surrender.doc
 > Who was the first person from Team Wombley to click the URL in the phishing email?
 >
 > ~~~sql
-database('NorthPoleWorkshop').Employees
-| join kind=inner (OutboundNetworkEvents) 
-  on $left.ip_addr == $right.src_ip
-| where url contains "Team_Wombley_Surrender.doc"
-| project name, ip_addr, url, timestamp
-| top 1 by timestamp asc
-| distinct name
+> database('NorthPoleWorkshop').Employees
+> | join kind=inner (OutboundNetworkEvents) 
+>    on $left.ip_addr == $right.src_ip
+> | where url contains "Team_Wombley_Surrender.doc"
+> | project name, ip_addr, url, timestamp
+> | top 1 by timestamp asc
+> | distinct name
 > ~~~
 
 ```
@@ -227,19 +227,19 @@ Joyelle Tinseltoe
 > What was the filename that was created after the .doc was downloaded and executed?
 >
 > ~~~sql
-let download_time = toscalar(database('NorthPoleWorkshop').Employees
-| join kind=inner (OutboundNetworkEvents)
-  on $left.ip_addr == $right.src_ip
-| where url contains "Team_Wombley_Surrender.doc"
-| project name, ip_addr, url, timestamp
-| top 1 by timestamp asc
-| distinct timestamp);
-database('NorthPoleWorkshop').FileCreationEvents
-| where timestamp > make_datetime(download_time)
-| where filename != "Team_Wombley_Surrender.doc"
-| where hostname == "Elf-Lap-W-Tinseltoe"
-| top 1 by timestamp asc 
-| distinct filename
+> let download_time = toscalar(database('NorthPoleWorkshop').Employees
+> | join kind=inner (OutboundNetworkEvents)
+>   on $left.ip_addr == $right.src_ip
+> | where url contains "Team_Wombley_Surrender.doc"
+> | project name, ip_addr, url, timestamp
+> | top 1 by timestamp asc
+> | distinct timestamp);
+> database('NorthPoleWorkshop').FileCreationEvents
+> | where timestamp > make_datetime(download_time)
+> | where filename != "Team_Wombley_Surrender.doc"
+> | where hostname == "Elf-Lap-W-Tinseltoe"
+> | top 1 by timestamp asc 
+> | distinct filename
 > ~~~
 
 ```
@@ -250,9 +250,9 @@ keylogger.exe
 > To obtain your flag use the KQL below with your last answer!
 > 
 > ~~~sql
-let flag = "keylogger.exe";
-let base64_encoded = base64_encode_tostring(flag);
-print base64_encoded
+> let flag = "keylogger.exe";
+> let base64_encoded = base64_encode_tostring(flag);
+> print base64_encoded
 > ~~~
 
 ```
@@ -277,11 +277,11 @@ snowfall
 > What was the IP address associated with the password spray?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').AuthenticationEvents
-| where result == "Failed Login"
-| summarize users_sprayed_by_ip = count_distinct(username) by src_ip
-| top 1 by users_sprayed_by_ip desc
-| distinct src_ip
+> database('NorthPoleWorkshop').AuthenticationEvents
+> | where result == "Failed Login"
+> | summarize users_sprayed_by_ip = count_distinct(username) by src_ip
+> | top 1 by users_sprayed_by_ip desc
+> | distinct src_ip
 > ~~~
 
 ```
@@ -292,11 +292,11 @@ database('NorthPoleWorkshop').AuthenticationEvents
 > How many unique accounts were impacted where there was a successful login from 59.171.58.12?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').AuthenticationEvents
-| where result == "Successful Login"
-| where src_ip == "59.171.58.12"
-| distinct username
-| count
+> database('NorthPoleWorkshop').AuthenticationEvents
+> | where result == "Successful Login"
+> | where src_ip == "59.171.58.12"
+> | distinct username
+> | count
 > ~~~
 
 ```
@@ -307,17 +307,17 @@ database('NorthPoleWorkshop').AuthenticationEvents
 > What service was used to access these accounts/devices?
 > 
 > ~~~sql
-let ip_address = "59.171.58.12";
-let logons = database('NorthPoleWorkshop').AuthenticationEvents
-| where src_ip == ip_address
-| where result == "Successful Login"
-| distinct username;
-let results = search *
-| where src_ip == ip_address
-| where username in (logons)
-| where result == "Successful Login";
-results 
-| project description
+> let ip_address = "59.171.58.12";
+> let logons = database('NorthPoleWorkshop').AuthenticationEvents
+> | where src_ip == ip_address
+> | where result == "Successful Login"
+> | distinct username;
+> let results = search *
+> | where src_ip == ip_address
+> | where username in (logons)
+> | where result == "Successful Login";
+> results 
+> | project description
 > ~~~
 
 ```
@@ -328,20 +328,20 @@ RDP
 > What file was exfiltrated from Alabaster’s laptop?
 > 
 > ~~~sql
-let ip_address = "59.171.58.12";
-let logons = database('NorthPoleWorkshop').AuthenticationEvents
-| where src_ip == ip_address
-| where result == "Successful Login"
-| distinct username;
-let rdp_time = toscalar(search *
-| where src_ip == ip_address
-| where username in (logons)
-| where hostname == "Elf-Lap-A-Snowball"
-| where result == "Successful Login"
-| distinct timestamp);
-database('NorthPoleWorkshop').ProcessEvents
-| where hostname == "Elf-Lap-A-Snowball"
-| where timestamp > make_datetime(rdp_time)
+> let ip_address = "59.171.58.12";
+> let logons = database('NorthPoleWorkshop').AuthenticationEvents
+> | where src_ip == ip_address
+> | where result == "Successful Login"
+> | distinct username;
+> let rdp_time = toscalar(search *
+> | where src_ip == ip_address
+> | where username in (logons)
+> | where hostname == "Elf-Lap-A-Snowball"
+> | where result == "Successful Login"
+> | distinct timestamp);
+> database('NorthPoleWorkshop').ProcessEvents
+> | where hostname == "Elf-Lap-A-Snowball"
+> | where timestamp > make_datetime(rdp_time)
 > ~~~
 
 > [!NOTE]
@@ -355,20 +355,20 @@ Secret_Files.zip
 > ###### Section 3 - Question 6
 > What is the name of the malicious file that was run on Alabaster's laptop?
 > ~~~sql
-let ip_address = "59.171.58.12";
-let logons = database('NorthPoleWorkshop').AuthenticationEvents
-| where src_ip == ip_address
-| where result == "Successful Login"
-| distinct username;
-let rdp_time = toscalar(search *
-| where src_ip == ip_address
-| where username in (logons)
-| where hostname == "Elf-Lap-A-Snowball"
-| where result == "Successful Login"
-| distinct timestamp);
-database('NorthPoleWorkshop').ProcessEvents
-| where hostname == "Elf-Lap-A-Snowball"
-| where timestamp > make_datetime(rdp_time)
+> let ip_address = "59.171.58.12";
+> let logons = database('NorthPoleWorkshop').AuthenticationEvents
+> | where src_ip == ip_address
+> | where result == "Successful Login"
+> | distinct username;
+> let rdp_time = toscalar(search *
+> | where src_ip == ip_address
+> | where username in (logons)
+> | where hostname == "Elf-Lap-A-Snowball"
+> | where result == "Successful Login"
+> | distinct timestamp);
+> database('NorthPoleWorkshop').ProcessEvents
+> | where hostname == "Elf-Lap-A-Snowball"
+> | where timestamp > make_datetime(rdp_time)
 > ~~~
 
 > [!NOTE]
@@ -382,9 +382,9 @@ EncryptEverything.exe
 > To obtain your flag use the KQL below with your last answer!
 > 
 > ~~~sql
-let flag = "EncryptEverything.exe";
-let base64_encoded = base64_encode_tostring(flag);
-print base64_encoded
+> let flag = "EncryptEverything.exe";
+> let base64_encoded = base64_encode_tostring(flag);
+> print base64_encoded
 > ~~~
 
 ```
@@ -409,11 +409,11 @@ stay frosty
 > What was the timestamp of first phishing email about the breached credentials received by Noel Boetie?
 >
 > ~~~sql
-database('NorthPoleWorkshop').Email
-| where recipient == "noel_boetie@santaworkshopgeeseislands.org"
-| where subject contains "breach"
-| top 1 by timestamp asc
-| distinct timestamp
+> database('NorthPoleWorkshop').Email
+> | where recipient == "noel_boetie@santaworkshopgeeseislands.org"
+> | where subject contains "breach"
+> | top 1 by timestamp asc
+> | distinct timestamp
 > ~~~
 
 ```
@@ -424,19 +424,19 @@ database('NorthPoleWorkshop').Email
 > When did Noel Boetie click the link to the first file?
 > 
 > ~~~sql
-let noels_ip = database('NorthPoleWorkshop').Employees
-| where username contains "Boetie"
-| distinct ip_addr;
-let notification_time = toscalar(database('NorthPoleWorkshop').Email
-| where recipient == "noel_boetie@santaworkshopgeeseislands.org"
-| where subject contains "breach"
-| top 1 by timestamp asc
-| distinct timestamp);
-database('NorthPoleWorkshop').OutboundNetworkEvents
-| where src_ip in (noels_ip)
-| where timestamp > make_datetime(notification_time)
-| top 1 by timestamp asc
-| distinct timestamp
+> let noels_ip = database('NorthPoleWorkshop').Employees
+> | where username contains "Boetie"
+> | distinct ip_addr;
+> let notification_time = toscalar(database('NorthPoleWorkshop').Email
+> | where recipient == "noel_boetie@santaworkshopgeeseislands.org"
+> | where subject contains "breach"
+> | top 1 by timestamp asc
+> | distinct timestamp);
+> database('NorthPoleWorkshop').OutboundNetworkEvents
+> | where src_ip in (noels_ip)
+> | where timestamp > make_datetime(notification_time)
+> | top 1 by timestamp asc
+> | distinct timestamp
 > ~~~
 
 ```
@@ -447,19 +447,19 @@ database('NorthPoleWorkshop').OutboundNetworkEvents
 > What was the IP for the domain where the file was hosted?
 > 
 > ~~~sql
-let ip = database('NorthPoleWorkshop').Employees
-| where name contains "Noel"
-| distinct ip_addr;
-let urls = database('NorthPoleWorkshop').OutboundNetworkEvents
-| where src_ip in (ip)
-| where timestamp > (datetime("2024-12-12T14:48:55Z"))
-| project url;
-let domains = urls 
-| extend Domain = extract(@"https?://([^/]+)", 1, url) // Extract the domain
-| project Domain;
-database('NorthPoleWorkshop').PassiveDns
-| where domain in (domains)
-| distinct ip
+> let ip = database('NorthPoleWorkshop').Employees
+> | where name contains "Noel"
+> | distinct ip_addr;
+> let urls = database('NorthPoleWorkshop').OutboundNetworkEvents
+> | where src_ip in (ip)
+> | where timestamp > (datetime("2024-12-12T14:48:55Z"))
+> | project url;
+> let domains = urls 
+> | extend Domain = extract(@"https?://([^/]+)", 1, url) // Extract the domain
+> | project Domain;
+> database('NorthPoleWorkshop').PassiveDns
+> | where domain in (domains)
+> | distinct ip
 > ~~~
 
 ```
@@ -470,9 +470,9 @@ database('NorthPoleWorkshop').PassiveDns
 > what hostname was accessed?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').AuthenticationEvents
-| where src_ip == "182.56.23.122"
-| distinct hostname
+> database('NorthPoleWorkshop').AuthenticationEvents
+> | where src_ip == "182.56.23.122"
+> | distinct hostname
 > ~~~
 
 ```
@@ -483,8 +483,8 @@ WebApp-ElvesWorkshop
 > What was the script that was run to obtain credentials?
 >
 > ~~~sql
-database('NorthPoleWorkshop').ProcessEvents
-| where hostname == "WebApp-ElvesWorkshop"
+> database('NorthPoleWorkshop').ProcessEvents
+> | where hostname == "WebApp-ElvesWorkshop"
 > ~~~
 
 > [!NOTE]
@@ -498,8 +498,8 @@ Invoke-Mimikatz.ps1
 > What is the timestamp where Noel executed the file?
 >
 > ~~~sql
-database('NorthPoleWorkshop').ProcessEvents
-| where hostname contains "Boetie"
+> database('NorthPoleWorkshop').ProcessEvents
+> | where hostname contains "Boetie"
 > ~~~
 
 > [!NOTE]
@@ -513,11 +513,11 @@ database('NorthPoleWorkshop').ProcessEvents
 > What domain was the holidaycandy.hta file downloaded from?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').OutboundNetworkEvents
-| where src_ip == "10.10.0.9"
-| where url contains "hta"
-| distinct url
-| project url = extract("(.*)://([^/]*)", 2, url)
+> database('NorthPoleWorkshop').OutboundNetworkEvents
+> | where src_ip == "10.10.0.9"
+> | where url contains "hta"
+> | distinct url
+> | project url = extract("(.*)://([^/]*)", 2, url)
 > ~~~
 
 ```
@@ -528,15 +528,15 @@ compromisedchristmastoys.com
 > what was the first file that was created after extraction?
 > 
 > ~~~sql
-let download_time = toscalar(database('NorthPoleWorkshop').ProcessEvents
-| where hostname contains "Boetie"
-| where process_commandline contains "frosty.txt"
-| distinct timestamp);
-database('NorthPoleWorkshop').FileCreationEvents
-| where hostname contains "Boetie"
-| where timestamp > make_datetime(download_time)
-| top 1 by timestamp asc
-| distinct filename
+> let download_time = toscalar(database('NorthPoleWorkshop').ProcessEvents
+> | where hostname contains "Boetie"
+> | where process_commandline contains "frosty.txt"
+> | distinct timestamp);
+> database('NorthPoleWorkshop').FileCreationEvents
+> | where hostname contains "Boetie"
+> | where timestamp > make_datetime(download_time)
+> | top 1 by timestamp asc
+> | distinct filename
 > ~~~
 
 ```
@@ -547,11 +547,11 @@ sqlwriter.exe
 > What is the name of the property assigned to the new registry key?
 > 
 > ~~~sql
-database('NorthPoleWorkshop').ProcessEvents
-| where hostname contains "boet"
-| where process_commandline contains "property"
-| distinct process_commandline
-| project url = extract('(.*ItemProperty.*")(.*)(".*Value.*)', 2, process_commandline)
+> database('NorthPoleWorkshop').ProcessEvents
+> | where hostname contains "boet"
+> | where process_commandline contains "property"
+> | distinct process_commandline
+> | project url = extract('(.*ItemProperty.*")(.*)(".*Value.*)', 2, process_commandline)
 > ~~~
 
 ```
@@ -562,9 +562,9 @@ frosty
 > To obtain your FINAL flag use the KQL below with your last answer!
 >
 > ~~~sql
-let finalflag = "frosty";
-let base64_encoded = base64_encode_tostring(finalflag);
-print base64_encoded
+> let finalflag = "frosty";
+> let base64_encoded = base64_encode_tostring(finalflag);
+> print base64_encoded
 > ~~~
 
 ```
