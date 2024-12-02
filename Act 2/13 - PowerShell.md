@@ -275,7 +275,8 @@ $session.Cookies.Add('http://127.0.0.1/',$cookie);
 > \<h1>Cookie 'mfa_code', use it at \<a href='1733115957.1711812'>/mfa_validate/4216B4FAF4391EE4D3E0EC53A372B2F24876ED5D124FE08E227F84D687A7E06C\</a>\</h1>
 > ~~~
 
-> [!NOTE] Wait...
+> [!NOTE]
+> Waaaait...
 
 > ![](attachments/troll_radar%201.gif)
 > 
@@ -428,7 +429,7 @@ unredact '5f8dd236f862f4507835b0e418907ffc'
 > CyberChef recipe to get the hashes:
 > ~~~
 > Find_/_Replace({'option':'Regex','string':'(.)$'},'$1\\n',true,false,true,false)
-SHA2('256',64,160)
+> SHA2('256',64,160)
 > ~~~
 
 Run the following PowerShell script in the terminal to decode all endpoints:
