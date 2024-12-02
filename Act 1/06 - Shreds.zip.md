@@ -7,8 +7,7 @@
 > The hint 'On the Cutting Edge' mentions a python script 'heuristic_edge_detection.py', but we ignore that because we will solve this challenge using PowerShell.
  
 > [!NOTE]
-> A lot of players who used the python heuristics script ended up with a mirrored image output. The original image is actually not mirrored, but due to the way that the Python script reassembles the slices of an image, there is a chance that reconstructs a mirror of the original image. This happens when the second slice that is matched to the initial slice, happens to originally be on the left side of the initial slice. The script matches it and places it on the right side. The script will continue doing this and this results in a reversed image.
-> After all, the script does not know what the final image should look like - there is even a possibility that the original image was indeed mirrored. However, in this case we know the image was not mirrored due to the way we recover the original image which relies on metadata inside the image slices instead of image slice edge detection and pattern matching.
+>  A lot of players who used the Python heuristics script ended up with a mirrored image output. The original image is actually not mirrored, but due to the way that the Python script reassembles the slices, there is a chance that it reconstructs a mirror of the original image. The script matches the second slice on the wrong side of the first slice, and the script will continue matching the rest of the slices, resulting in a reversed image.
 
 > The Python image output:
 > ![Pasted image 20241128010844](attachments/Pasted%20image%2020241128010844.png)
