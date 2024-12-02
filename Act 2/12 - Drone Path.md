@@ -154,7 +154,8 @@ kml_to_ascii "fritjolf-Path.kml"
 
 > ![](attachments/Pasted%20image%2020241201230557.png)
 > 
-> The unusual word followed by a number 1 at the end make this look like a password.
+> The unusual word followed by a number 1 at the end make this look like a password
+> 
 > The filename 'fritjolf-Path.kml' indicates a possible username 'fritjolf'
  
 Click the hamburger menu in the top right -> 'Menu' -> 'Login'
