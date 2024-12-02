@@ -22,7 +22,7 @@ let's do this
  > ###### Section 1 - Question 2
  > Once you've examined all the tables, type when in doubt take 10 to proceed.
  >
-> ~~~sql
+> ~~~
 database('NorthPoleWorkshop').Employees
 | take 10
 > ~~~
