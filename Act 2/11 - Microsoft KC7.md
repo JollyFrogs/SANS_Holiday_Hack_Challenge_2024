@@ -575,7 +575,8 @@ ZnJvc3R5
 ---
 
 
-> [!NOTE] Open the Holiday Hack Challenge game:
+> [!NOTE]
+> Open the Holiday Hack Challenge game:
 
 > ### Silver Medal
 > 
