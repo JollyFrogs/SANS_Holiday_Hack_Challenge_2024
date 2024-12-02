@@ -192,9 +192,9 @@
 > 
 > We can decode the Base64 encoded string using PowerShell as follows:
 > ~~~powershell
-$base64 = "WyI9VXpNIiwgImEgbSJd"
-$decoded = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($base64))
-Write-Host "Decoded string: $decoded"
+> $base64 = "WyI9VXpNIiwgImEgbSJd"
+> $decoded = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($base64))
+> Write-Host "Decoded string: $decoded"
 > ~~~
 > The Base64 comment in each of the slice image files decodes to a JSON structure:
 > 
@@ -207,9 +207,9 @@ Write-Host "Decoded string: $decoded"
 > 
 > Decoding the reversed base64 returns the string '35':
 > ~~~powershell
-$reversed_base64 = "=UzM"
-$unreversed_base64 = -join $reversed_base64[($reversed_base64.Length-1)..0]
-Write-Host $([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($unreversed_base64)))
+> $reversed_base64 = "=UzM"
+> $unreversed_base64 = -join $reversed_base64[($reversed_base64.Length-1)..0]
+> Write-Host $([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($unreversed_base64)))
 > ~~~
 > ~~~
 > 35
