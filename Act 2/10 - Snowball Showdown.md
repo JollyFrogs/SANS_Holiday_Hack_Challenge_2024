@@ -156,7 +156,7 @@ function windiff {
 # windiff -apply -backup:$false original.js changes.diff
 ```
 
-> In the same Terminal / PowerShell, paste the following contents to modify the overridden source file 'phaser-snowball-game.js':
+In the same Terminal / PowerShell, run the following script to modify the overridden source file 'phaser-snowball-game.js':
 
 ```powershell
 # Change to your Override directory
