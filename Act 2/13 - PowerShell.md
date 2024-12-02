@@ -560,10 +560,15 @@ gc results.txt
 > Our plan is as follows:
 >
 > 1\) Trigger the Tripwire Canary defenses by supplying a bogus 'attempts' cookie
+> 
 > 2\) After the tripwire is triggered, read the mfa code received
+> 
 > 3\) Change the 'attempts' cookie to the shared cookie value 'c25ha2VvaWwK01'
+> 
 > 4\) Make legitimate requests to the /mfa_validate endpoints.
+> 
 > 5\) Send at least 10 requests per endpoint within 2 seconds
+> 
 > 6\) Since the endpoints were scrambled, we try all endpoints
 
 Run the following PowerShell script to execute the steps above:
